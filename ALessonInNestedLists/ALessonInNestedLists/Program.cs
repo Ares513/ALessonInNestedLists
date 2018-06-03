@@ -15,6 +15,7 @@ namespace ALessonInNestedLists
             var harrisonFord = new Actor("Harrison Ford");
 
             var hanSolo = new Role("Han Solo", "Scoundrel");
+            hanSolo.Appearances.Add(DateTime.Now);
             hanSolo.Appearances.Add(DateTime.Now); //close enough
             hanSolo.Appearances.Add(new DateTime(1977, 5, 17));
 
@@ -31,6 +32,23 @@ namespace ALessonInNestedLists
             joker.Appearances.Add(new DateTime(1996, 1, 1));
             
             markHamil.Roles.AddRange(new List<Role>(new Role[] { lukeSkywalker, joker }));
+
+            actors.Add(markHamil);
+            actors.Add(harrisonFord);
+
+        
+
+            foreach(Actor thisActor in actors)
+            {
+                Console.WriteLine(thisActor.Name);
+                foreach(Role thisRole in thisActor.Roles)
+                {
+                    Console.WriteLine(thisRole.RoleName);
+                }
+            }
+            Console.ReadLine();
+
+
             //now let's iterate over them all and collect all the appearances
             var allAppearances = new List<DateTime>();
             foreach(var actor in actors)
