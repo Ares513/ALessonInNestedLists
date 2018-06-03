@@ -18,7 +18,7 @@ namespace ALessonInNestedLists
         public Role(string roleName, string description)
         {
             Appearances = new List<DateTime>();
-            RoleName = RoleName;
+            RoleName = roleName;
             Description = description;
         }
     }
